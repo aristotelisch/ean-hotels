@@ -87,6 +87,8 @@ GEM
       net-ssh (>= 2.6.5)
     polyglot (0.3.3)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.2)
@@ -153,6 +155,7 @@ DEPENDENCIES
   jquery-rails
   memcachier
   mysql2
+  rack-cache
   rails (= 4.0.2)
   rvm-capistrano
   sass-rails (~> 4.0.0)

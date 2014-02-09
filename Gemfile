@@ -24,6 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 # user the expedia api
 gem 'expedia'
+gem 'rack-cache'
 gem 'api_cache'
 gem 'memcachier'
 gem 'dalli'
