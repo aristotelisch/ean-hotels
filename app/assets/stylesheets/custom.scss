@@ -1,0 +1,29 @@
+.hotel {
+  margin-top: 2%;
+  padding-bottom: 1%;
+  border-bottom: 1px solid lightgrey;
+  // overflow: hidden;
+  // width: 100%;
+  .thumbnail {
+    max-width: 218px;
+  }
+  .hotel-content {
+    h3 {
+      margin-top: 1%;
+    }
+  }
+}
+
+#search-form {
+  margin-top: 8%;
+  background-color: lightblue;
+
+  h1 {
+    color: #285e8e;
+  }
+  input {
+    margin-bottom: 15px;
+  }
+}
+
+

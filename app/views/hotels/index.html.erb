@@ -1,0 +1,22 @@
+<h1>Top 10 Hotels in <%= @hotels_list.first["city"] %> </h1>
+<div class="row">
+  <div class="col-xs-12 col-lg-8">
+    <div id="hotelList">
+      <% @hotels_list.each do  |hotel| %>
+        <div class="hotel row" id="<%= hotel['hotelId'] %>" >
+          <div class="thumbnail col-lg-4">
+            <%= image_tag "http://images.travelnow.com"+hotel["thumbNailUrl"].sub(/t{1}\.jpg/,"l.jpg"),{ alt: hotel["name"], class: "img-responsive" } %> 
+          </div>
+          <div class="hotel-content  col-lg-8">
+            <h3><%== hotel["name"] %></h3>
+            <div class="shortDescription">
+              <%= raw CGI.unescapeHTML(hotel["shortDescription"]) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div id="sidebar" class="col-lg-4">
+  </div>
+</div>
