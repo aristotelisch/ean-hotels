@@ -7,22 +7,10 @@ class ApplicationController < ActionController::Base
 
   # use the api with a default parameter if empty
   def get_hotels_list_response(search_parameters = { :destinationString => 'new york' })
-    options = {
-      :cache => 5.days,    # 10 minutes  After this time fetch new data
-      :valid => 10.days,  # 1 day       Maximum time to use old data
-      #:forever is a valid option
-      :period => 0,    # 1 minute    Maximum frequency to call API
-      #:timeout => 5     # 5 seconds   API response timeout
-    }
-    destination = search_parameters[:destinationString]
-    APICache.get(destination.downcase, options) do
-      # Instentiate api object
       api = Expedia::Api.new
-
-      # Method to search for a hotel. see http://developer.ean.com/docs/read/hotels/version_3/request_hotel_list
+      # Method to search for a hotel. see http://developer.ean.com/docs/read/hotels/version_4/request_hotel_list
       # {:propertyName => 'Hotel Moa Berlin', :destinationString => 'berlin'}
       api.get_list(search_parameters)
-    end
   end
 
   # return an array of hotel hashes

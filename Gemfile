@@ -25,7 +25,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # user the expedia api
 gem 'expedia'
 gem 'rack-cache'
-gem 'api_cache'
 gem 'memcachier'
 gem 'dalli'
 gem 'figaro'
