@@ -25,7 +25,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # user the expedia api
 gem 'expedia'
 gem 'rack-cache'
-gem 'memcachier'
+# gem 'memcachier'
 gem 'dalli'
 gem 'figaro'
 # Use jquery as the JavaScript library

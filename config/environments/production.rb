@@ -4,20 +4,20 @@ EanHotels::Application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  # Eager load code on boot. This eager loads most of Rails and
+  # eager load code on boot. this eager loads most of rails and
   # your application in memory, allowing both thread web servers
   # and those relying on copy on write to perform better.
-  # Rake tasks automatically ignore this option for performance.
+  # rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  # Full error reports are disabled and caching is turned on.
+  # full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  # Enable Rack::Cache to put a simple HTTP cache in front of your application
-  # Add `rack-cache` to your Gemfile before enabling this.
-  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
-  client = Dalli::Client.new(['lynch.happybit.eu:11211', 'marty.happybit.eu:11211'],
+  # enable rack::cache to put a simple http cache in front of your application
+  # add `rack-cache` to your gemfile before enabling this.
+  # for large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+  client = dalli::client.new(['81.4.121.196:11211','81.4.126.198:11211'],
                              :value_max_bytes => 10485760)
   config.action_dispatch.rack_cache = {
     :metastore    => client,
