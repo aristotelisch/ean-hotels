@@ -18,7 +18,7 @@ EanHotels::Application.configure do
   # add `rack-cache` to your gemfile before enabling this.
   # for large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
   client = Dalli::Client.new(['81.4.121.196:11211','81.4.126.198:11211'],
-                             :value_max_bytes => 10485760)
+                             {:failover => true, :value_max_bytes => 10485760, :compress => true })
   config.action_dispatch.rack_cache = {
     :metastore    => client,
     :entitystore  => client
