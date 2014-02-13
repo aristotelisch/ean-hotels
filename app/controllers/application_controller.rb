@@ -7,19 +7,17 @@ class ApplicationController < ActionController::Base
 
   # use the api with a default parameter if empty
   def get_hotels_list_response(search_parameters = { :destinationString => 'new york' })
-      Rails.cache.fetch search_parameters, :expires_in => 5.minutes do
         sleep 3.seconds
         api = Expedia::Api.new
       # Method to search for a hotel. see http://developer.ean.com/docs/read/hotels/version_4/request_hotel_list
       # {:propertyName => 'Hotel Moa Berlin', :destinationString => 'berlin'}
         api.get_list(search_parameters)
-      end
   end
 
   # return an array of hotel hashes
   def get_hotels(search_parameters_hash, how_many_results = 10)
     response =  get_hotels_list_response(search_parameters_hash)
-    puts response
+    # puts response
     # execute this method to know if there is any exception
      if response.exception? # false if success
        flash[:alert] = "#{response.presentation_message}"
