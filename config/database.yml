@@ -32,11 +32,10 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: test-mysql2_production
+  database: mysql2_production
   pool: 5
   username: root
-  password: makalaba8!
-  socket: /tmp/mysql.sock
+  password: 
 # # PostgreSQL. Versions 8.2 and up are supported.
 # #
 # # Install the pg driver:
