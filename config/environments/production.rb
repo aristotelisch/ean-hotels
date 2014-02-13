@@ -17,7 +17,9 @@ EanHotels::Application.configure do
   # enable rack::cache to put a simple http cache in front of your application
   # add `rack-cache` to your gemfile before enabling this.
   # for large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
-  client = Dalli::Client.new(['81.4.121.196:11211'],
+  # client = Dalli::Client.new(['81.4.121.196:11211'],
+  #                            { :value_max_bytes => 10485760, :compress => true })
+  client = Dalli::Client.new(['lynch.happybit.eu:11211'],
                              { :value_max_bytes => 10485760, :compress => true })
   config.action_dispatch.rack_cache = {
     :metastore    => client,
@@ -44,7 +46,7 @@ EanHotels::Application.configure do
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
